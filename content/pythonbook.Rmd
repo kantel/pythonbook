@@ -3,7 +3,8 @@ title: "Python-Schulung (Handout)"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
-  pdf_document: default
+  pdf_document: 
+    fig_caption: yes
   html_document: default
 ---
 
