@@ -1,5 +1,5 @@
 ---
-title: "Python-Schulung (Handout)"
+title: "Grundkurs Python"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
