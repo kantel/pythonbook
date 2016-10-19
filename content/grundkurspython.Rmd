@@ -10,14 +10,21 @@ output:
   html_notebook: default
   html_document: default
   tufte::tufte_html:
+    css: user.css
     fig_caption: yes
+    tufte_features:
+    - fonts
+    - italics
+subtitle: Programmieren (nicht nur) für Geisteswissenschaftler
 ---
 
 # Was ist Python?
 
-Python ist eine universelle Programmiersprache, die üblicherweise interpretiert wird. Sie gilt wegen ihres kleinen Sprachkerns und der durch die Syntax  erzwungenen Strukturierung als leicht zu erlernen. Python wurde Anfang der 1990er Jahre von *Guido van Rossum* als Lehrsprache entwickelt.
+Python[^pythonurl] ist eine universelle Programmiersprache, die üblicherweise interpretiert wird. Sie gilt wegen ihres kleinen Sprachkerns und der durch die Syntax  erzwungenen Strukturierung als leicht zu erlernen. Python wurde Anfang der 1990er Jahre von *Guido van Rossum* als Lehrsprache entwickelt.
 
-```{r, echo=FALSE, fig.cap="Python Logo", fig.margin = TRUE}
+[^pythonurl]: http://python.org
+
+```{r, echo=FALSE, fig.margin = TRUE}
 knitr::include_graphics("images/pythonlogo.png")
 ```
 
@@ -25,7 +32,7 @@ Auch wenn das Logo es vermuten läßt, stand nicht eine Schlange Pate für den N
 
 Es gibt mehrere Implementierungen von Python, die Referenzumsetzung ist CPython (Python in C geschrieben), dann gibt es eine Java-Implementierung von Python namens Jython, die in durchaus interessant ist und auch von mir in Form von Processing.py verwendet wird. Außerhalb meines Fokusses gibt es (mindestens) noch IronPython, eine Implementierung für die .NET- und Mono-Plattform und PyPy, ein in Python geschriebener Python-Interpreter (das klingt selbstreferentiell, aber es geht).
 
-**Python**, genauer CPython existiert momentan in zwei Versionen: Da das im Jahre 2008 veröffentlichte Python 3 nicht mehr rückwärtskompatibel zu den vorherigen Python-Versionen war, wurde beschlossen, auch Python 2.7 noch weiterzuentwickeln. Aktuell ist dies die Version 2.7.5 und diese Version entspricht auch der von Apple mit dem Betriebssystem ausgelieferte Python-Interpreter. Der große Vorteil von Python 3 ist aber die weitestgehende Unicode-Unterstützung, daher werde ich mich auf Python 3 konzentrieren. Aber in allen Fällen, in denen es nicht um Unicode (UTF-8) geht, sollten die Beispiele auch mit Python 2.7.5 laufen. Auf eventuelle Besonderheiten und Unterschiede werde ich dann jeweils hinweisen.
+**Python**, genauer CPython existiert momentan in zwei Versionen: Da das im Jahre 2008 veröffentlichte Python 3 nicht mehr rückwärtskompatibel zu den vorherigen Python-Versionen war, wurde beschlossen, auch Python 2.7 noch bis 2020 weiterzuentwickeln. Aktuell ist dies die Version 2.7.5 und diese Version entspricht auch der von Apple mit dem Betriebssystem ausgelieferte Python-Interpreter. Der große Vorteil von Python 3 ist aber die weitestgehende Unicode-Unterstützung, daher werde ich mich auf Python 3 konzentrieren. Aber in allen Fällen, in denen es nicht um Unicode (UTF-8) geht, sollten die Beispiele auch mit Python 2.7.5 laufen. Auf eventuelle Besonderheiten und Unterschiede werde ich dann jeweils hinweisen.
 
 **Jython** wiederum unterstützt in der aktuellen Version 2.7.1 von 2015 bisher nur den Sprachstandard von Python 2.7. Ein Jython 3 ist zwar schon seit längerem angekündigt, aber bisher noch nicht erschienen.
 
@@ -37,7 +44,7 @@ In den letzten Jahren hat sich Python zu einer der führenden Entwicklungsumgebu
 
 # Python-Ökosystem
 
-Im Rahmen dieser Schulung werden wir in der Hauptsache mit folgenden Implementierungen/Paketen und Programmen arbeiten:
+Im Rahmen dieses Grundkurses werde ich in der Hauptsache mit folgenden Implementierungen/Paketen und Programmen arbeiten:
 
   * (Anaconda-) Python 3
   * Numpy, Scipy und die Matplotlib (in Anaconda bereits enthalten)
@@ -98,3 +105,5 @@ Jede Einführung in eine Programmiersrpache beginnt mit einem »Hallo Welt«-Pro
 # -*- coding: utf-8 -*-
 print("Hallöchen Welt!")
 ```
+
+Seit Python 3 ist der Codeschnipsel `# -*- coding: utf-8 -*-` eigentlich nicht mehr notwendig, aber da ich noch nicht herausgefunden habe, wie ich RStudios Notebook, in dem ich diesen Text schreibe, auf mein Anaconda-Python umbiegen kann, nutzt RStudio zur Zeit noch das Syste4m-Python von Apple und das ist -- wie oben schon angemerkt -- ein 2.7.5 ohne wirkliche Unicode-Unterstützung. Aber auch in Python 3 stört der Schnipsel nicht, er wird einfach als Kommentar behandelt.
