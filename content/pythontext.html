@@ -65,7 +65,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 Sys.which(&quot;python&quot;)</code></pre>
 <pre><code>##                             python 
 ## &quot;/Users/admin/anaconda/bin/python&quot;</code></pre>
-<p>eingibt, dann findet auch <em>R Markdown</em> das Anaconda Python, der unten stehende Python-3-Code wird korrekt ausgeführt<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> Leider habe ich noch eine Möglichkeit gefunden, wie man dies in einer projektbezogenen Konfigurationsdatei für jedes Projekt permanent machen kann, zur Zeit führe ich den Code mit <code>echo=FALSE</code>. einfach zu Beginn eines jeden R-Markdown-Dokuments aus.</span> und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten:</p>
+<p>eingibt, dann findet auch <em>R Markdown</em> das Anaconda Python, der unten stehende Python-3-Code wird korrekt ausgeführt<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> Leider habe ich noch keine Möglichkeit gefunden, wie man dies in einer projektbezogenen Konfigurationsdatei für jedes Projekt permanent machen kann, zur Zeit führe ich den Code mit <code>echo=FALSE</code>. einfach zu Beginn eines jeden R-Markdown-Dokuments aus.</span> und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten.</p>
+<p>Natürlich muß der Path dem jeweiligen System angepaßt werden und es gibt auch keine Abkürzungen wie <code>~</code> oder <code>$</code>. Da der Pfad zum Anaconda-Python auf einem meiner Rechner <code>/Users/admin/anaconda/bin</code> und auf einem anderen <code>/Users/kantel/anaconda/bin</code> heißt, ist das nicht unproblematisch.</p>
 <pre class="python"><code>from collections import Counter
 path = &quot;data/aufklaerung.txt&quot;
 
@@ -79,7 +80,7 @@ liste = cntr.most_common()
 print(liste[0:5])</code></pre>
 <pre><code>## Beantwortung der Frage: Was ist Aufklärung?
 ## Aufklärung ist der Ausgang des Menschen aus seiner selbst verschuldeten Unmündigkeit.
-## [('der', 2), ('ist', 2), ('beantwortung', 1), ('was', 1), ('unmündigkeit.', 1)]</code></pre>
+## [('der', 2), ('ist', 2), ('unmündigkeit.', 1), ('aufklärung?', 1), ('selbst', 1)]</code></pre>
 <p>So schön das Tufte-Paket auch ist, man sieht gleich seine ersten Unzulänglichkeiten: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus). Und die Bilder in der Randspalte bekommt man nicht mit Markdown, sondern nur mit einem R-Chunk dorthin.</p>
 <p>Daher sollte man sich wirklich überlegen, ob man die Funktionalität der Ästhetik opfert. Aber ich bin guter Hoffnung, daß ich – so wie ich den beigen Hintergrund des Original-Templates zu einem weißen umbiegen konnte – die Codespalten über die ganze Seitenbreite ziehen kann.</p>
 <p>Wie gesagt, im Druck sieht alles schicker aus. Der <em>Tufte-Handout-Style</em> ist eben für Druckerzeugnisse entworfen und nicht für Online-Publikationen. Das merkt man deutlich.</p>

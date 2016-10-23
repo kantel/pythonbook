@@ -44,9 +44,12 @@ Sys.setenv(PATH="/Users/admin/anaconda/bin")
 Sys.which("python")
 ```
 
-eingibt, dann findet auch *R Markdown* das Anaconda Python, der unten stehende Python-3-Code wird korrekt ausgeführt[^sessionpython] und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten:
+eingibt, dann findet auch *R Markdown* das Anaconda Python, der unten stehende Python-3-Code wird korrekt ausgeführt[^sessionpython] und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten.
 
-[^sessionpython]: Leider habe ich noch eine Möglichkeit gefunden, wie man dies in einer projektbezogenen Konfigurationsdatei für jedes Projekt permanent machen kann, zur Zeit führe ich den Code mit `echo=FALSE`. einfach zu Beginn eines jeden R-Markdown-Dokuments aus.
+Natürlich muß der Path dem jeweiligen System angepaßt werden und es gibt auch keine Abkürzungen wie `~`
+oder `$`. Da der Pfad zum Anaconda-Python auf einem meiner Rechner `/Users/admin/anaconda/bin` und auf einem anderen `/Users/kantel/anaconda/bin` heißt, ist das nicht unproblematisch.
+
+[^sessionpython]: Leider habe ich noch keine Möglichkeit gefunden, wie man dies in einer projektbezogenen Konfigurationsdatei für jedes Projekt permanent machen kann, zur Zeit führe ich den Code mit `echo=FALSE`. einfach zu Beginn eines jeden R-Markdown-Dokuments aus.
 
 
 ```{python}
