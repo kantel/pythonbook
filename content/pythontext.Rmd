@@ -3,18 +3,18 @@ title: "R Notebook, Python und UTF-8"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
-  html_document: default
-  html_notebook: default
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: xelatex
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
+  html_notebook: default
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: xelatex
+  html_document: default
 ---
 
 ## Python im R Notebook -- ein erster Test
@@ -23,20 +23,37 @@ Bei meinen Experimenten mit dem neuen R Notebook habe ich nicht nur dieses, sond
 
 [^tufte]: http://rstudio.github.io/tufte/
 
-Leider verbindet sich das Notebook zur Zeit nur mit dem Python, was R unter `Sys.witch("python")` findet[^knitr], und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5. Wie dem auch sei, für erste Tests muß das reichen.
+Leider verbindet sich das Notebook zur Zeit nur mit dem Python, was R unter `Sys.witch("python")` findet[^knitr], und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5.
 
-[^knitr]: Das scheint eine Eigenschaft der [Knitr-Language-Engine](http://rmarkdown.rstudio.com/authoring_knitr_engines.html) zu sein
+[^knitr]: Das scheint eine Eigenschaft der [Knitr-Language-Engine](http://rmarkdown.rstudio.com/authoring_knitr_engines.html) zu sein.
+
+Man kann das System jedoch überlisten. Zwar gibt untenstehender R-Code wie erwartet, daß System-Python von Apple aus,
 
 ```{r, echo=FALSE, fig.margin = TRUE}
 knitr::include_graphics("images/pythonlogo.png")
 ```
 
+```{r}
+Sys.which("python")
+```
+
+wenn man jedoch zu beginn jeder Sitzung
+
+```{r}
+Sys.setenv(PATH="/Users/admin/anaconda/bin")
+Sys.which("python")
+```
+
+eingibt, dann findet auch R Markdown das Anaconda Python und der weiter unten stehende Python-3-Code wird korrekt ausgeführt[^sessionpython] und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten:
+
+[^sessionpython]: Leider habe ich noch eine Möglichkeit gefunden, ob man dies in einer projektbezogenen Konfigurationsdatei für dieses Projekt permanent machen kann.
+
+
 ```{python}
-# -*- coding: utf-8 -*-
 from collections import Counter
 path = "data/aufklaerung.txt"
 
-with open(path , mode="r") as f:
+with open(path, encoding="utf-8", mode="r") as f:
     text = f.read()
 print(text)
 
@@ -45,6 +62,7 @@ cntr = Counter(text.split())
 liste = cntr.most_common()
 print(liste[0:5])
 ```
+
 
 So schön das Tufte-Paket auch ist, man sieht auch gleich seine erste Unzulänglichkeit: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus).
 

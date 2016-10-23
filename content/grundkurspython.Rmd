@@ -3,22 +3,26 @@ title: "Grundkurs Python"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: xelatex
-  html_notebook: default
-  html_document: default
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
+  html_notebook: default
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: xelatex
+  html_document: default
 subtitle: Programmieren (nicht nur) für Geisteswissenschaftler
 ---
 
 # Was ist Python?
+
+```{r, echo=FALSE}
+Sys.setenv(PATH="/Users/admin/anaconda/bin")
+```
 
 Python[^pythonurl] ist eine universelle Programmiersprache, die üblicherweise interpretiert wird. Sie gilt wegen ihres kleinen Sprachkerns und der durch die Syntax  erzwungenen Strukturierung als leicht zu erlernen. Python wurde Anfang der 1990er Jahre von *Guido van Rossum* als Lehrsprache entwickelt.
 
@@ -102,8 +106,5 @@ Auch wenn die Zukunft von PlotDevice nicht ganz klar ist (das letzte Update auf 
 Jede Einführung in eine Programmiersrpache beginnt mit einem »Hallo Welt«-Programm. In Python ist dies von erfrischender Kürze:
 
 ```{python}
-# -*- coding: utf-8 -*-
 print("Hallöchen Welt!")
 ```
-
-Seit Python 3 ist der Codeschnipsel `# -*- coding: utf-8 -*-` eigentlich nicht mehr notwendig, aber da ich noch nicht herausgefunden habe, wie ich RStudios Notebook, in dem ich diesen Text schreibe, auf mein Anaconda-Python umbiegen kann, nutzt RStudio zur Zeit noch das Syste4m-Python von Apple und das ist -- wie oben schon angemerkt -- ein 2.7.5 ohne wirkliche Unicode-Unterstützung. Aber auch in Python 3 stört der Schnipsel nicht, er wird einfach als Kommentar behandelt.
