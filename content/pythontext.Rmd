@@ -27,7 +27,7 @@ Leider verbindet sich das Notebook zur Zeit nur mit dem Python, was R unter `Sys
 
 [^knitr]: Das scheint eine Eigenschaft der [Knitr-Language-Engine](http://rmarkdown.rstudio.com/authoring_knitr_engines.html) zu sein.
 
-Man kann das System jedoch überlisten. Zwar gibt untenstehender R-Code wie erwartet, daß System-Python von Apple aus,
+Man kann das System jedoch überlisten. Zwar gibt untenstehender R-Code wie erwartet das System-Python von Apple aus,
 
 ```{r, echo=FALSE, fig.margin = TRUE}
 knitr::include_graphics("images/pythonlogo.png")
@@ -37,16 +37,16 @@ knitr::include_graphics("images/pythonlogo.png")
 Sys.which("python")
 ```
 
-wenn man jedoch zu beginn jeder Sitzung
+wenn man jedoch zu Beginn jeder Sitzung
 
 ```{r}
 Sys.setenv(PATH="/Users/admin/anaconda/bin")
 Sys.which("python")
 ```
 
-eingibt, dann findet auch R Markdown das Anaconda Python und der weiter unten stehende Python-3-Code wird korrekt ausgeführt[^sessionpython] und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten:
+eingibt, dann findet auch *R Markdown* das Anaconda Python, der unten stehende Python-3-Code wird korrekt ausgeführt[^sessionpython] und zeigt auch die ausgegebene Liste in UTF-8 mit korrekten Umlauten:
 
-[^sessionpython]: Leider habe ich noch eine Möglichkeit gefunden, ob man dies in einer projektbezogenen Konfigurationsdatei für dieses Projekt permanent machen kann.
+[^sessionpython]: Leider habe ich noch eine Möglichkeit gefunden, wie man dies in einer projektbezogenen Konfigurationsdatei für jedes Projekt permanent machen kann, zur Zeit führe ich den Code mit `echo=FALSE`. einfach zu Beginn eines jeden R-Markdown-Dokuments aus.
 
 
 ```{python}
@@ -64,8 +64,8 @@ print(liste[0:5])
 ```
 
 
-So schön das Tufte-Paket auch ist, man sieht auch gleich seine erste Unzulänglichkeit: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus).
+So schön das Tufte-Paket auch ist, man sieht gleich seine ersten Unzulänglichkeiten: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus). Und die Bilder in der Randspalte bekommt man nicht mit Markdown, sondern nur mit einem R-Chunk dorthin.
 
-Nimmt man dagegen als Output das »normale« HTML-Dokument des Notebooks, ist eigentlich alles viel schicker. Wenn man keinen guten Grund hat, sollte man sich daher wirklich überlegen, ob man die Funktionalität der Ästhetik opfert.
+Daher sollte man sich wirklich überlegen, ob man die Funktionalität der Ästhetik opfert. Aber ich bin guter Hoffnung, daß ich -- so wie ich den beigen Hintergrund des Original-Templates zu einem weißen umbiegen konnte -- die Codespalten über die ganze Seitenbreite ziehen kann.
 
 Wie gesagt, im Druck sieht alles schicker aus. Der *Tufte-Handout-Style* ist eben für Druckerzeugnisse entworfen und nicht für Online-Publikationen. Das merkt man deutlich.
