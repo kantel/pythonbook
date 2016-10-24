@@ -3,18 +3,18 @@ title: "R Notebook, Python und UTF-8"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: pdflatex
+  html_notebook: default
+  html_document: default
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
-  html_notebook: default
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: xelatex
-  html_document: default
 ---
 
 ## Python im R Notebook -- ein erster Test
@@ -23,15 +23,17 @@ Bei meinen Experimenten mit dem neuen R Notebook habe ich nicht nur dieses, sond
 
 [^tufte]: http://rstudio.github.io/tufte/
 
-Leider verbindet sich das Notebook zur Zeit nur mit dem Python, was R unter `Sys.witch("python")` findet[^knitr], und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5.
+Leider verbindet sich das Notebook zur Zeit nur mit dem Python, das R unter `Sys.witch("python")` findet[^knitr], und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5.
 
 [^knitr]: Das scheint eine Eigenschaft der [Knitr-Language-Engine](http://rmarkdown.rstudio.com/authoring_knitr_engines.html) zu sein.
-
-Man kann das System jedoch überlisten. Zwar gibt untenstehender R-Code wie erwartet das System-Python von Apple aus,
 
 ```{r, echo=FALSE, fig.margin = TRUE}
 knitr::include_graphics("images/pythonlogo.png")
 ```
+
+Man kann das System jedoch überlisten.
+
+Zwar gibt untenstehender R-Code wie erwartet das System-Python von Apple aus,
 
 ```{r}
 Sys.which("python")
@@ -40,7 +42,7 @@ Sys.which("python")
 wenn man jedoch zu Beginn jeder Sitzung
 
 ```{r}
-Sys.setenv(PATH="/Users/admin/anaconda/bin")
+Sys.setenv(PATH="/Users/kantel/anaconda/bin")
 Sys.which("python")
 ```
 
@@ -63,12 +65,22 @@ print(text)
 text= text.lower()
 cntr = Counter(text.split())
 liste = cntr.most_common()
-print(liste[0:5])
+print(liste[0:7])
 ```
 
+Auch für diesen Output mußte ich das System überlisten: Das Tufte-CSS läßt den Code nämlich nicht breiter werden, als es die Textspalten sind und so entstehen sehr schnell die häßlichen, horizontalen Scrollbalken. Daher habe ich eine `user.css` geschrieben, die als letzte CSS-Datei eingelesen wird und bisher folgenden Code enthält:
 
-So schön das Tufte-Paket auch ist, man sieht gleich seine ersten Unzulänglichkeiten: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus). Und die Bilder in der Randspalte bekommt man nicht mit Markdown, sondern nur mit einem R-Chunk dorthin.
+```css
+body {
+	background-color: #ffffff; }
 
-Daher sollte man sich wirklich überlegen, ob man die Funktionalität der Ästhetik opfert. Aber ich bin guter Hoffnung, daß ich -- so wie ich den beigen Hintergrund des Original-Templates zu einem weißen umbiegen konnte -- die Codespalten über die ganze Seitenbreite ziehen kann.
+pre { width: 90%;
+           padding-left: 2.5%;
+           overflow-x: auto; }
+```
+
+Damit habe ich erstens das in meinen Augen häßliche *beige* durch einen weißen Hintergrund ersetzt und zum anderen den Code-Blöcken eine Weite von 90 Prozent zugewiesen. Das dürfte in den meisten Fällen ausreichen, so daß die vertikalen Scrollbalken nur noch selten auftauchen sollten.
+
+Allerdings muß man nun darauf achten, daß man neben den Code-Ausgaben keine Randnotizen oder Bilder mehr setzen sollte. Sonst entstehen sehr häßliche Lücken zwischen den Absätzen.
 
 Wie gesagt, im Druck sieht alles schicker aus. Der *Tufte-Handout-Style* ist eben für Druckerzeugnisse entworfen und nicht für Online-Publikationen. Das merkt man deutlich.

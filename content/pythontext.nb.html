@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jörg Kantel" />
 
-<meta name="date" content="2016-10-23" />
+<meta name="date" content="2016-10-24" />
 
 <title>R Notebook, Python und UTF-8</title>
 
@@ -170,7 +170,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">R Notebook, Python und UTF-8</h1>
 <h4 class="author"><em>Jörg Kantel</em></h4>
-<h4 class="date"><em>2016-10-23</em></h4>
+<h4 class="date"><em>2016-10-24</em></h4>
 
 </div>
 
@@ -179,12 +179,13 @@ $(document).ready(function () {
 <div id="python-im-r-notebook-ein-erster-test" class="section level2">
 <h2>Python im R Notebook – ein erster Test</h2>
 <p>Bei meinen Experimenten mit dem neuen R Notebook habe ich nicht nur dieses, sondern auch das Tufte-Paket<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> für einen schöneren HTML- und PDF-/LaTeX-Output entdeckt. Und so habe ich beides zusammen für meine ersten Experimente mit dem R Notebook und Python genutzt.</p>
-<p>Leider verbindet sich das Notebook zur Zeit nur mit dem Python, was R unter <code>Sys.witch(&quot;python&quot;)</code> findet<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5.</p>
-<p>Man kann das System jedoch überlisten. Zwar gibt untenstehender R-Code wie erwartet das System-Python von Apple aus,</p>
+<p>Leider verbindet sich das Notebook zur Zeit nur mit dem Python, das R unter <code>Sys.witch(&quot;python&quot;)</code> findet<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, und das ist leider das (System-) Python 2.7.5 von Apple, nicht jedoch mein Anaconda Python 3.5.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Man kann das System jedoch überlisten.</p>
+<p>Zwar gibt untenstehender R-Code wie erwartet das System-Python von Apple aus,</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3lzLndoaWNoKFwicHl0aG9uXCIpXG5gYGAifQ== -->
@@ -195,8 +196,8 @@ $(document).ready(function () {
 <p>wenn man jedoch zu Beginn jeder Sitzung</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3lzLnNldGVudihQQVRIPVwiL1VzZXJzL2FkbWluL2FuYWNvbmRhL2JpblwiKVxuU3lzLndoaWNoKFwicHl0aG9uXCIpXG5gYGAifQ== -->
-<pre class="r"><code>Sys.setenv(PATH=&quot;/Users/admin/anaconda/bin&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3lzLnNldGVudihQQVRIPVwiL1VzZXJzL2thbnRlbC9hbmFjb25kYS9iaW5cIilcblN5cy53aGljaChcInB5dGhvblwiKVxuYGBgIn0= -->
+<pre class="r"><code>Sys.setenv(PATH=&quot;/Users/kantel/anaconda/bin&quot;)
 Sys.which(&quot;python&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -205,7 +206,7 @@ Sys.which(&quot;python&quot;)</code></pre>
 <p>Natürlich muß der Path dem jeweiligen System angepaßt werden und es gibt auch keine Abkürzungen wie <code>~</code> oder <code>$</code>. Da der Pfad zum Anaconda-Python auf einem meiner Rechner <code>/Users/admin/anaconda/bin</code> und auf einem anderen <code>/Users/kantel/anaconda/bin</code> heißt, ist das nicht unproblematisch.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBDb3VudGVyXG5wYXRoID0gXCJkYXRhL2F1ZmtsYWVydW5nLnR4dFwiXG5cbndpdGggb3BlbihwYXRoLCBlbmNvZGluZz1cInV0Zi04XCIsIG1vZGU9XCJyXCIpIGFzIGY6XG4gICAgdGV4dCA9IGYucmVhZCgpXG5wcmludCh0ZXh0KVxuXG50ZXh0PSB0ZXh0Lmxvd2VyKClcbmNudHIgPSBDb3VudGVyKHRleHQuc3BsaXQoKSlcbmxpc3RlID0gY250ci5tb3N0X2NvbW1vbigpXG5wcmludChsaXN0ZVswOjVdKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBDb3VudGVyXG5wYXRoID0gXCJkYXRhL2F1ZmtsYWVydW5nLnR4dFwiXG5cbndpdGggb3BlbihwYXRoLCBlbmNvZGluZz1cInV0Zi04XCIsIG1vZGU9XCJyXCIpIGFzIGY6XG4gICAgdGV4dCA9IGYucmVhZCgpXG5wcmludCh0ZXh0KVxuXG50ZXh0PSB0ZXh0Lmxvd2VyKClcbmNudHIgPSBDb3VudGVyKHRleHQuc3BsaXQoKSlcbmxpc3RlID0gY250ci5tb3N0X2NvbW1vbigpXG5wcmludChsaXN0ZVswOjddKVxuYGBgIn0= -->
 <pre class="python"><code>from collections import Counter
 path = &quot;data/aufklaerung.txt&quot;
 
@@ -216,12 +217,19 @@ print(text)
 text= text.lower()
 cntr = Counter(text.split())
 liste = cntr.most_common()
-print(liste[0:5])</code></pre>
+print(liste[0:7])</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>So schön das Tufte-Paket auch ist, man sieht gleich seine ersten Unzulänglichkeiten: Breite Codezeilen sind zumindest beim HTML-Output nur mit dem ungeliebten, horizontalen Scrollbalken möglich (beim PDF-Output sieht die Geschichte schon besser aus). Und die Bilder in der Randspalte bekommt man nicht mit Markdown, sondern nur mit einem R-Chunk dorthin.</p>
-<p>Daher sollte man sich wirklich überlegen, ob man die Funktionalität der Ästhetik opfert. Aber ich bin guter Hoffnung, daß ich – so wie ich den beigen Hintergrund des Original-Templates zu einem weißen umbiegen konnte – die Codespalten über die ganze Seitenbreite ziehen kann.</p>
+<p>Auch für diesen Output mußte ich das System überlisten: Das Tufte-CSS läßt den Code nämlich nicht breiter werden, als es die Textspalten sind und so entstehen sehr schnell die häßlichen, horizontalen Scrollbalken. Daher habe ich eine <code>user.css</code> geschrieben, die als letzte CSS-Datei eingelesen wird und bisher folgenden Code enthält:</p>
+<pre class="css"><code>body {
+    background-color: #ffffff; }
+
+pre { width: 90%;
+           padding-left: 2.5%;
+           overflow-x: auto; }</code></pre>
+<p>Damit habe ich erstens das in meinen Augen häßliche <em>beige</em> durch einen weißen Hintergrund ersetzt und zum anderen den Code-Blöcken eine Weite von 90 Prozent zugewiesen. Das dürfte in den meisten Fällen ausreichen, so daß die vertikalen Scrollbalken nur noch selten auftauchen sollten.</p>
+<p>Allerdings muß man nun darauf achten, daß man neben den Code-Ausgaben keine Randnotizen oder Bilder mehr setzen sollte. Sonst entstehen sehr häßliche Lücken zwischen den Absätzen.</p>
 <p>Wie gesagt, im Druck sieht alles schicker aus. Der <em>Tufte-Handout-Style</em> ist eben für Druckerzeugnisse entworfen und nicht für Online-Publikationen. Das merkt man deutlich.</p>
 <!-- rnb-text-end -->
 </div>
@@ -234,7 +242,7 @@ print(liste[0:5])</code></pre>
 </ol>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vaywgUHl0aG9uIHVuZCBVVEYtOCIKYXV0aG9yOiAiSsO2cmcgS2FudGVsIgpkYXRlOiAnYHIgU3lzLkRhdGUoKWAnCm91dHB1dDoKICB0dWZ0ZTo6dHVmdGVfaHRtbDoKICAgIGNzczogdXNlci5jc3MKICAgIGZpZ19jYXB0aW9uOiB5ZXMKICAgIHR1ZnRlX2ZlYXR1cmVzOgogICAgLSBmb250cwogICAgLSBpdGFsaWNzCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdAogIHR1ZnRlOjp0dWZ0ZV9oYW5kb3V0OgogICAgZmlnX2NhcHRpb246IHllcwogICAgaGlnaGxpZ2h0OiB0YW5nbwogICAgbGF0ZXhfZW5naW5lOiB4ZWxhdGV4CiAgaHRtbF9kb2N1bWVudDogZGVmYXVsdAotLS0KCiMjIFB5dGhvbiBpbSBSIE5vdGVib29rIC0tIGVpbiBlcnN0ZXIgVGVzdAoKQmVpIG1laW5lbiBFeHBlcmltZW50ZW4gbWl0IGRlbSBuZXVlbiBSIE5vdGVib29rIGhhYmUgaWNoIG5pY2h0IG51ciBkaWVzZXMsIHNvbmRlcm4gYXVjaCBkYXMgVHVmdGUtUGFrZXRbXnR1ZnRlXSBmw7xyIGVpbmVuIHNjaMO2bmVyZW4gSFRNTC0gdW5kIFBERi0vTGFUZVgtT3V0cHV0IGVudGRlY2t0LiBVbmQgc28gaGFiZSBpY2ggYmVpZGVzIHp1c2FtbWVuIGbDvHIgbWVpbmUgZXJzdGVuIEV4cGVyaW1lbnRlIG1pdCBkZW0gUiBOb3RlYm9vayB1bmQgUHl0aG9uIGdlbnV0enQuCgpbXnR1ZnRlXTogaHR0cDovL3JzdHVkaW8uZ2l0aHViLmlvL3R1ZnRlLwoKTGVpZGVyIHZlcmJpbmRldCBzaWNoIGRhcyBOb3RlYm9vayB6dXIgWmVpdCBudXIgbWl0IGRlbSBQeXRob24sIHdhcyBSIHVudGVyIGBTeXMud2l0Y2goInB5dGhvbiIpYCBmaW5kZXRbXmtuaXRyXSwgdW5kIGRhcyBpc3QgbGVpZGVyIGRhcyAoU3lzdGVtLSkgUHl0aG9uIDIuNy41IHZvbiBBcHBsZSwgbmljaHQgamVkb2NoIG1laW4gQW5hY29uZGEgUHl0aG9uIDMuNS4KCltea25pdHJdOiBEYXMgc2NoZWludCBlaW5lIEVpZ2Vuc2NoYWZ0IGRlciBbS25pdHItTGFuZ3VhZ2UtRW5naW5lXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tL2F1dGhvcmluZ19rbml0cl9lbmdpbmVzLmh0bWwpIHp1IHNlaW4uCgpNYW4ga2FubiBkYXMgU3lzdGVtIGplZG9jaCDDvGJlcmxpc3Rlbi4gWndhciBnaWJ0IHVudGVuc3RlaGVuZGVyIFItQ29kZSB3aWUgZXJ3YXJ0ZXQgZGFzIFN5c3RlbS1QeXRob24gdm9uIEFwcGxlIGF1cywKCmBgYHtyLCBlY2hvPUZBTFNFLCBmaWcubWFyZ2luID0gVFJVRX0Ka25pdHI6OmluY2x1ZGVfZ3JhcGhpY3MoImltYWdlcy9weXRob25sb2dvLnBuZyIpCmBgYAoKYGBge3J9ClN5cy53aGljaCgicHl0aG9uIikKYGBgCgp3ZW5uIG1hbiBqZWRvY2ggenUgQmVnaW5uIGplZGVyIFNpdHp1bmcKCmBgYHtyfQpTeXMuc2V0ZW52KFBBVEg9Ii9Vc2Vycy9hZG1pbi9hbmFjb25kYS9iaW4iKQpTeXMud2hpY2goInB5dGhvbiIpCmBgYAoKZWluZ2lidCwgZGFubiBmaW5kZXQgYXVjaCAqUiBNYXJrZG93biogZGFzIEFuYWNvbmRhIFB5dGhvbiwgZGVyIHVudGVuIHN0ZWhlbmRlIFB5dGhvbi0zLUNvZGUgd2lyZCBrb3JyZWt0IGF1c2dlZsO8aHJ0W15zZXNzaW9ucHl0aG9uXSB1bmQgemVpZ3QgYXVjaCBkaWUgYXVzZ2VnZWJlbmUgTGlzdGUgaW4gVVRGLTggbWl0IGtvcnJla3RlbiBVbWxhdXRlbi4KCk5hdMO8cmxpY2ggbXXDnyBkZXIgUGF0aCBkZW0gamV3ZWlsaWdlbiBTeXN0ZW0gYW5nZXBhw590IHdlcmRlbiB1bmQgZXMgZ2lidCBhdWNoIGtlaW5lIEFia8O8cnp1bmdlbiB3aWUgYH5gCm9kZXIgYCRgLiBEYSBkZXIgUGZhZCB6dW0gQW5hY29uZGEtUHl0aG9uIGF1ZiBlaW5lbSBtZWluZXIgUmVjaG5lciBgL1VzZXJzL2FkbWluL2FuYWNvbmRhL2JpbmAgdW5kIGF1ZiBlaW5lbSBhbmRlcmVuIGAvVXNlcnMva2FudGVsL2FuYWNvbmRhL2JpbmAgaGVpw590LCBpc3QgZGFzIG5pY2h0IHVucHJvYmxlbWF0aXNjaC4KCltec2Vzc2lvbnB5dGhvbl06IExlaWRlciBoYWJlIGljaCBub2NoIGtlaW5lIE3DtmdsaWNoa2VpdCBnZWZ1bmRlbiwgd2llIG1hbiBkaWVzIGluIGVpbmVyIHByb2pla3RiZXpvZ2VuZW4gS29uZmlndXJhdGlvbnNkYXRlaSBmw7xyIGplZGVzIFByb2pla3QgcGVybWFuZW50IG1hY2hlbiBrYW5uLCB6dXIgWmVpdCBmw7xocmUgaWNoIGRlbiBDb2RlIG1pdCBgZWNobz1GQUxTRWAuIGVpbmZhY2ggenUgQmVnaW5uIGVpbmVzIGplZGVuIFItTWFya2Rvd24tRG9rdW1lbnRzIGF1cy4KCgpgYGB7cHl0aG9ufQpmcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBDb3VudGVyCnBhdGggPSAiZGF0YS9hdWZrbGFlcnVuZy50eHQiCgp3aXRoIG9wZW4ocGF0aCwgZW5jb2Rpbmc9InV0Zi04IiwgbW9kZT0iciIpIGFzIGY6CiAgICB0ZXh0ID0gZi5yZWFkKCkKcHJpbnQodGV4dCkKCnRleHQ9IHRleHQubG93ZXIoKQpjbnRyID0gQ291bnRlcih0ZXh0LnNwbGl0KCkpCmxpc3RlID0gY250ci5tb3N0X2NvbW1vbigpCnByaW50KGxpc3RlWzA6NV0pCmBgYAoKClNvIHNjaMO2biBkYXMgVHVmdGUtUGFrZXQgYXVjaCBpc3QsIG1hbiBzaWVodCBnbGVpY2ggc2VpbmUgZXJzdGVuIFVuenVsw6RuZ2xpY2hrZWl0ZW46IEJyZWl0ZSBDb2RlemVpbGVuIHNpbmQgenVtaW5kZXN0IGJlaW0gSFRNTC1PdXRwdXQgbnVyIG1pdCBkZW0gdW5nZWxpZWJ0ZW4sIGhvcml6b250YWxlbiBTY3JvbGxiYWxrZW4gbcO2Z2xpY2ggKGJlaW0gUERGLU91dHB1dCBzaWVodCBkaWUgR2VzY2hpY2h0ZSBzY2hvbiBiZXNzZXIgYXVzKS4gVW5kIGRpZSBCaWxkZXIgaW4gZGVyIFJhbmRzcGFsdGUgYmVrb21tdCBtYW4gbmljaHQgbWl0IE1hcmtkb3duLCBzb25kZXJuIG51ciBtaXQgZWluZW0gUi1DaHVuayBkb3J0aGluLgoKRGFoZXIgc29sbHRlIG1hbiBzaWNoIHdpcmtsaWNoIMO8YmVybGVnZW4sIG9iIG1hbiBkaWUgRnVua3Rpb25hbGl0w6R0IGRlciDDhHN0aGV0aWsgb3BmZXJ0LiBBYmVyIGljaCBiaW4gZ3V0ZXIgSG9mZm51bmcsIGRhw58gaWNoIC0tIHNvIHdpZSBpY2ggZGVuIGJlaWdlbiBIaW50ZXJncnVuZCBkZXMgT3JpZ2luYWwtVGVtcGxhdGVzIHp1IGVpbmVtIHdlacOfZW4gdW1iaWVnZW4ga29ubnRlIC0tIGRpZSBDb2Rlc3BhbHRlbiDDvGJlciBkaWUgZ2FuemUgU2VpdGVuYnJlaXRlIHppZWhlbiBrYW5uLgoKV2llIGdlc2FndCwgaW0gRHJ1Y2sgc2llaHQgYWxsZXMgc2NoaWNrZXIgYXVzLiBEZXIgKlR1ZnRlLUhhbmRvdXQtU3R5bGUqIGlzdCBlYmVuIGbDvHIgRHJ1Y2tlcnpldWduaXNzZSBlbnR3b3JmZW4gdW5kIG5pY2h0IGbDvHIgT25saW5lLVB1Ymxpa2F0aW9uZW4uIERhcyBtZXJrdCBtYW4gZGV1dGxpY2gu</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vaywgUHl0aG9uIHVuZCBVVEYtOCIKYXV0aG9yOiAiSsO2cmcgS2FudGVsIgpkYXRlOiAnYHIgU3lzLkRhdGUoKWAnCm91dHB1dDoKICB0dWZ0ZTo6dHVmdGVfaGFuZG91dDoKICAgIGZpZ19jYXB0aW9uOiB5ZXMKICAgIGhpZ2hsaWdodDogdGFuZ28KICAgIGxhdGV4X2VuZ2luZTogcGRmbGF0ZXgKICBodG1sX25vdGVib29rOiBkZWZhdWx0CiAgaHRtbF9kb2N1bWVudDogZGVmYXVsdAogIHR1ZnRlOjp0dWZ0ZV9odG1sOgogICAgY3NzOiB1c2VyLmNzcwogICAgZmlnX2NhcHRpb246IHllcwogICAgdHVmdGVfZmVhdHVyZXM6CiAgICAtIGZvbnRzCiAgICAtIGl0YWxpY3MKLS0tCgojIyBQeXRob24gaW0gUiBOb3RlYm9vayAtLSBlaW4gZXJzdGVyIFRlc3QKCkJlaSBtZWluZW4gRXhwZXJpbWVudGVuIG1pdCBkZW0gbmV1ZW4gUiBOb3RlYm9vayBoYWJlIGljaCBuaWNodCBudXIgZGllc2VzLCBzb25kZXJuIGF1Y2ggZGFzIFR1ZnRlLVBha2V0W150dWZ0ZV0gZsO8ciBlaW5lbiBzY2jDtm5lcmVuIEhUTUwtIHVuZCBQREYtL0xhVGVYLU91dHB1dCBlbnRkZWNrdC4gVW5kIHNvIGhhYmUgaWNoIGJlaWRlcyB6dXNhbW1lbiBmw7xyIG1laW5lIGVyc3RlbiBFeHBlcmltZW50ZSBtaXQgZGVtIFIgTm90ZWJvb2sgdW5kIFB5dGhvbiBnZW51dHp0LgoKW150dWZ0ZV06IGh0dHA6Ly9yc3R1ZGlvLmdpdGh1Yi5pby90dWZ0ZS8KCkxlaWRlciB2ZXJiaW5kZXQgc2ljaCBkYXMgTm90ZWJvb2sgenVyIFplaXQgbnVyIG1pdCBkZW0gUHl0aG9uLCBkYXMgUiB1bnRlciBgU3lzLndpdGNoKCJweXRob24iKWAgZmluZGV0W15rbml0cl0sIHVuZCBkYXMgaXN0IGxlaWRlciBkYXMgKFN5c3RlbS0pIFB5dGhvbiAyLjcuNSB2b24gQXBwbGUsIG5pY2h0IGplZG9jaCBtZWluIEFuYWNvbmRhIFB5dGhvbiAzLjUuCgpbXmtuaXRyXTogRGFzIHNjaGVpbnQgZWluZSBFaWdlbnNjaGFmdCBkZXIgW0tuaXRyLUxhbmd1YWdlLUVuZ2luZV0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbS9hdXRob3Jpbmdfa25pdHJfZW5naW5lcy5odG1sKSB6dSBzZWluLgoKYGBge3IsIGVjaG89RkFMU0UsIGZpZy5tYXJnaW4gPSBUUlVFfQprbml0cjo6aW5jbHVkZV9ncmFwaGljcygiaW1hZ2VzL3B5dGhvbmxvZ28ucG5nIikKYGBgCgpNYW4ga2FubiBkYXMgU3lzdGVtIGplZG9jaCDDvGJlcmxpc3Rlbi4KClp3YXIgZ2lidCB1bnRlbnN0ZWhlbmRlciBSLUNvZGUgd2llIGVyd2FydGV0IGRhcyBTeXN0ZW0tUHl0aG9uIHZvbiBBcHBsZSBhdXMsCgpgYGB7cn0KU3lzLndoaWNoKCJweXRob24iKQpgYGAKCndlbm4gbWFuIGplZG9jaCB6dSBCZWdpbm4gamVkZXIgU2l0enVuZwoKYGBge3J9ClN5cy5zZXRlbnYoUEFUSD0iL1VzZXJzL2thbnRlbC9hbmFjb25kYS9iaW4iKQpTeXMud2hpY2goInB5dGhvbiIpCmBgYAoKZWluZ2lidCwgZGFubiBmaW5kZXQgYXVjaCAqUiBNYXJrZG93biogZGFzIEFuYWNvbmRhIFB5dGhvbiwgZGVyIHVudGVuIHN0ZWhlbmRlIFB5dGhvbi0zLUNvZGUgd2lyZCBrb3JyZWt0IGF1c2dlZsO8aHJ0W15zZXNzaW9ucHl0aG9uXSB1bmQgemVpZ3QgYXVjaCBkaWUgYXVzZ2VnZWJlbmUgTGlzdGUgaW4gVVRGLTggbWl0IGtvcnJla3RlbiBVbWxhdXRlbi4KCk5hdMO8cmxpY2ggbXXDnyBkZXIgUGF0aCBkZW0gamV3ZWlsaWdlbiBTeXN0ZW0gYW5nZXBhw590IHdlcmRlbiB1bmQgZXMgZ2lidCBhdWNoIGtlaW5lIEFia8O8cnp1bmdlbiB3aWUgYH5gCm9kZXIgYCRgLiBEYSBkZXIgUGZhZCB6dW0gQW5hY29uZGEtUHl0aG9uIGF1ZiBlaW5lbSBtZWluZXIgUmVjaG5lciBgL1VzZXJzL2FkbWluL2FuYWNvbmRhL2JpbmAgdW5kIGF1ZiBlaW5lbSBhbmRlcmVuIGAvVXNlcnMva2FudGVsL2FuYWNvbmRhL2JpbmAgaGVpw590LCBpc3QgZGFzIG5pY2h0IHVucHJvYmxlbWF0aXNjaC4KCltec2Vzc2lvbnB5dGhvbl06IExlaWRlciBoYWJlIGljaCBub2NoIGtlaW5lIE3DtmdsaWNoa2VpdCBnZWZ1bmRlbiwgd2llIG1hbiBkaWVzIGluIGVpbmVyIHByb2pla3RiZXpvZ2VuZW4gS29uZmlndXJhdGlvbnNkYXRlaSBmw7xyIGplZGVzIFByb2pla3QgcGVybWFuZW50IG1hY2hlbiBrYW5uLCB6dXIgWmVpdCBmw7xocmUgaWNoIGRlbiBDb2RlIG1pdCBgZWNobz1GQUxTRWAuIGVpbmZhY2ggenUgQmVnaW5uIGVpbmVzIGplZGVuIFItTWFya2Rvd24tRG9rdW1lbnRzIGF1cy4KCgpgYGB7cHl0aG9ufQpmcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBDb3VudGVyCnBhdGggPSAiZGF0YS9hdWZrbGFlcnVuZy50eHQiCgp3aXRoIG9wZW4ocGF0aCwgZW5jb2Rpbmc9InV0Zi04IiwgbW9kZT0iciIpIGFzIGY6CiAgICB0ZXh0ID0gZi5yZWFkKCkKcHJpbnQodGV4dCkKCnRleHQ9IHRleHQubG93ZXIoKQpjbnRyID0gQ291bnRlcih0ZXh0LnNwbGl0KCkpCmxpc3RlID0gY250ci5tb3N0X2NvbW1vbigpCnByaW50KGxpc3RlWzA6N10pCmBgYAoKQXVjaCBmw7xyIGRpZXNlbiBPdXRwdXQgbXXDn3RlIGljaCBkYXMgU3lzdGVtIMO8YmVybGlzdGVuOiBEYXMgVHVmdGUtQ1NTIGzDpMOfdCBkZW4gQ29kZSBuw6RtbGljaCBuaWNodCBicmVpdGVyIHdlcmRlbiwgYWxzIGVzIGRpZSBUZXh0c3BhbHRlbiBzaW5kIHVuZCBzbyBlbnRzdGVoZW4gc2VociBzY2huZWxsIGRpZSBow6TDn2xpY2hlbiwgaG9yaXpvbnRhbGVuIFNjcm9sbGJhbGtlbi4gRGFoZXIgaGFiZSBpY2ggZWluZSBgdXNlci5jc3NgIGdlc2NocmllYmVuLCBkaWUgYWxzIGxldHp0ZSBDU1MtRGF0ZWkgZWluZ2VsZXNlbiB3aXJkIHVuZCBiaXNoZXIgZm9sZ2VuZGVuIENvZGUgZW50aMOkbHQ6CgpgYGBjc3MKYm9keSB7CgliYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmOyB9CgpwcmUgeyB3aWR0aDogOTAlOwogICAgICAgICAgIHBhZGRpbmctbGVmdDogMi41JTsKICAgICAgICAgICBvdmVyZmxvdy14OiBhdXRvOyB9CmBgYAoKRGFtaXQgaGFiZSBpY2ggZXJzdGVucyBkYXMgaW4gbWVpbmVuIEF1Z2VuIGjDpMOfbGljaGUgKmJlaWdlKiBkdXJjaCBlaW5lbiB3ZWnDn2VuIEhpbnRlcmdydW5kIGVyc2V0enQgdW5kIHp1bSBhbmRlcmVuIGRlbiBDb2RlLUJsw7Zja2VuIGVpbmUgV2VpdGUgdm9uIDkwIFByb3plbnQgenVnZXdpZXNlbi4gRGFzIGTDvHJmdGUgaW4gZGVuIG1laXN0ZW4gRsOkbGxlbiBhdXNyZWljaGVuLCBzbyBkYcOfIGRpZSB2ZXJ0aWthbGVuIFNjcm9sbGJhbGtlbiBudXIgbm9jaCBzZWx0ZW4gYXVmdGF1Y2hlbiBzb2xsdGVuLgoKQWxsZXJkaW5ncyBtdcOfIG1hbiBudW4gZGFyYXVmIGFjaHRlbiwgZGHDnyBtYW4gbmViZW4gZGVuIENvZGUtQXVzZ2FiZW4ga2VpbmUgUmFuZG5vdGl6ZW4gb2RlciBCaWxkZXIgbWVociBzZXR6ZW4gc29sbHRlLiBTb25zdCBlbnRzdGVoZW4gc2VociBow6TDn2xpY2hlIEzDvGNrZW4gendpc2NoZW4gZGVuIEFic8OkdHplbi4KCldpZSBnZXNhZ3QsIGltIERydWNrIHNpZWh0IGFsbGVzIHNjaGlja2VyIGF1cy4gRGVyICpUdWZ0ZS1IYW5kb3V0LVN0eWxlKiBpc3QgZWJlbiBmw7xyIERydWNrZXJ6ZXVnbmlzc2UgZW50d29yZmVuIHVuZCBuaWNodCBmw7xyIE9ubGluZS1QdWJsaWthdGlvbmVuLiBEYXMgbWVya3QgbWFuIGRldXRsaWNoLg==</div>
 
 
 

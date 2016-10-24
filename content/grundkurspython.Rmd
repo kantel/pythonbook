@@ -3,25 +3,25 @@ title: "Grundkurs Python"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: pdflatex
+  html_notebook: default
+  html_document: default
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
-  html_notebook: default
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: xelatex
-  html_document: default
 subtitle: Programmieren (nicht nur) für Geisteswissenschaftler
 ---
 
 # Was ist Python?
 
 ```{r, echo=FALSE}
-Sys.setenv(PATH="/Users/admin/anaconda/bin")
+Sys.setenv(PATH="/Users/kantel/anaconda/bin")
 ```
 
 Python[^pythonurl] ist eine universelle Programmiersprache, die üblicherweise interpretiert wird. Sie gilt wegen ihres kleinen Sprachkerns und der durch die Syntax  erzwungenen Strukturierung als leicht zu erlernen. Python wurde Anfang der 1990er Jahre von *Guido van Rossum* als Lehrsprache entwickelt.
