@@ -3,18 +3,19 @@ title: "R Notebook, Python und UTF-8"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: pdflatex
-  html_notebook: default
-  html_document: default
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
+  html_notebook: default
+  pdf_document: default
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: pdflatex
+  html_document: default
 ---
 
 ## Python im R Notebook -- ein erster Test
