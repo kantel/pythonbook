@@ -3,18 +3,18 @@ title: "Grundkurs Python"
 author: "Jörg Kantel"
 date: '`r Sys.Date()`'
 output:
-  html_notebook: default
-  html_document: default
-  tufte::tufte_handout:
-    fig_caption: yes
-    highlight: tango
-    latex_engine: pdflatex
   tufte::tufte_html:
     css: user.css
     fig_caption: yes
     tufte_features:
     - fonts
     - italics
+  html_notebook: default
+  tufte::tufte_handout:
+    fig_caption: yes
+    highlight: tango
+    latex_engine: pdflatex
+  html_document: default
 subtitle: Programmieren (nicht nur) für Geisteswissenschaftler
 ---
 
